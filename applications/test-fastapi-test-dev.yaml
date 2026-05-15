@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-fastapi-test-dev
+  namespace: argocd
+  labels:
+    app: test-fastapi-test
+    environment: dev
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/sajjadkhan12/argocd-centralized-repo-idp.git
+    targetRevision: main
+    path: apps/test-fastapi-test/overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: test-fastapi-test
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
