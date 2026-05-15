@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+images:
+  - name: ghcr.io/sajjadkhan-academy/new-microservice-team-a
+    newTag: latest
+
+namespace: new-microservice-team-a
+
+commonLabels:
+  app: new-microservice-team-a
+  environment: dev
