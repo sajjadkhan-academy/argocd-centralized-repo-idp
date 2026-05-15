@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/sajjadkhan12/argocd-centralized-repo-idp.git
+    repoURL: https://github.com/sajjadkhan-academy/argocd-centralized-repo-idp.git
     targetRevision: main
     path: apps/new-microservice-team-a/overlays/dev
   destination:
