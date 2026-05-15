@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: new-microservice-team-b
+  labels:
+    app: new-microservice-team-b
+    environment: dev
