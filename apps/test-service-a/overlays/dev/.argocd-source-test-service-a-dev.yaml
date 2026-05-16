@@ -1,3 +1,0 @@
-kustomize:
-  images:
-  - ghcr.io/sajjadkhan-academy/test-service-a:73eb02f3fd9b24d6e62804144448b3c31db7faf1
