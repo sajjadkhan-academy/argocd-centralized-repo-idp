@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-service-abc
+  labels:
+    app: test-service-abc
+spec:
+  type: ClusterIP
+  selector:
+    app: test-service-abc
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8090
+      protocol: TCP
