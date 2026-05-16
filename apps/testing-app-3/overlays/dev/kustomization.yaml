@@ -5,7 +5,7 @@ resources:
   - ../../base
 
 images:
-  - name: ghcr.io/sajjadkhan-academy/testing-app-3
+  - name: ghcr.io/sajjadkhan-academy/testing-app-3:{{ github.sha }}
 
 namespace: apps
 
