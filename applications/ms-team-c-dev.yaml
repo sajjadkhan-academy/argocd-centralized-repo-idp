@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ms-team-c-dev
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: service=
+    argocd-image-updater.argoproj.io/service.pull-secret: secret:argocd/ghcr-pull-secret
+    argocd-image-updater.argoproj.io/service.update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/git-branch: main
+    app: ms-team-c
+    environment: dev
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/sajjadkhan-academy/argocd-centralized-repo-idp.git
+    targetRevision: main
+    path: apps/ms-team-c/overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ms-team-c
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
