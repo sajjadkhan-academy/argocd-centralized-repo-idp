@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+images:
+  - name: ghcr.io/sajjadkhan-academy/test-service-b
+    newTag: latest
+
+namespace: apps
+
+commonLabels:
+  app: test-service-b
+  environment: dev
