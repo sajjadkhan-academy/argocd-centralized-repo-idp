@@ -4,6 +4,7 @@ metadata:
   name: single-store-test-2
   labels:
     app: single-store-test-2
+    backstage.io/kubernetes-id: single-store-test-2
 spec:
   type: ClusterIP
   selector:
