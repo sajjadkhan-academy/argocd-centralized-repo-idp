@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-test-sajjadkhan-33
+  labels:
+    app: my-test-sajjadkhan-33
+    backstage.io/kubernetes-id: my-test-sajjadkhan-33
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "60"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: my-test-sajjadkhan-33.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: my-test-sajjadkhan-33
+                port:
+                  number: 80
