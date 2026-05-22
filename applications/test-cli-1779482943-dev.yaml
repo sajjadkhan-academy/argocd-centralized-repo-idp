@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-cli-1779482943-dev
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    app: test-cli-1779482943
+    environment: dev
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/sajjadkhan-academy/argocd-centralized-repo-idp.git
+    targetRevision: main
+    path: apps/test-cli-1779482943/overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: apps
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

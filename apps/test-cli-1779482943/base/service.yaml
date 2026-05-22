@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-cli-1779482943
+  labels:
+    app: test-cli-1779482943
+    backstage.io/kubernetes-id: test-cli-1779482943
+spec:
+  type: ClusterIP
+  selector:
+    app: test-cli-1779482943
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+      protocol: TCP

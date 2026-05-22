@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+images:
+  - name: ghcr.io/sajjadkhan-academy/test-cli-1779482943
+    newTag: bootstrap
+
+namespace: apps
+
+commonLabels:
+  app: test-cli-1779482943
+  environment: dev
