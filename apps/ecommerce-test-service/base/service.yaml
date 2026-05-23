@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecommerce-test-service
+  labels:
+    app: ecommerce-test-service
+    backstage.io/kubernetes-id: ecommerce-test-service
+spec:
+  type: ClusterIP
+  selector:
+    app: ecommerce-test-service
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+      protocol: TCP
