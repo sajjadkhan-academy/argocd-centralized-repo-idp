@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: python-fastapi-test-9090-dev
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    app: python-fastapi-test-9090
+    environment: dev
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/sajjadkhan-academy/argocd-centralized-repo-idp.git
+    targetRevision: main
+    path: apps/python-fastapi-test-9090/overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: apps
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
