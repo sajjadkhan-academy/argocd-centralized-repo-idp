@@ -1,11 +1,15 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
 resources:
   - ../../base
+
 images:
   - name: ghcr.io/sajjadkhan-academy/testing-543553453
     newTag: f7e8cb9ff20cc43b1af1999ca3f26a78289f6e66
+
 namespace: apps
+
 commonLabels:
   app: testing-543553453
   environment: dev
