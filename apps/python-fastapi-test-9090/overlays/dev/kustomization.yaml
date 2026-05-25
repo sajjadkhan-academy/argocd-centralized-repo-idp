@@ -1,14 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
 resources:
   - ../../base
-
 images:
   - name: ghcr.io/sajjadkhan-academy/python-fastapi-test-9090
-
+    newTag: 84f7aeb77992c1570d7b48b1b3f3771e7fa8dd3b
 namespace: apps
-
 commonLabels:
   app: python-fastapi-test-9090
   environment: dev
