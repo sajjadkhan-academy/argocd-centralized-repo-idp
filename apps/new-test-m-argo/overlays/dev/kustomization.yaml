@@ -4,7 +4,7 @@ resources:
   - ../../base
 images:
   - name: ghcr.io/sajjadkhan-academy/new-test-m-argo
-    newTag: ed2ee6da7adcc083a18abe1f1c0e9ca683ebb2ec
+    newTag: c50ea8de6509e1d2846c3d750b2c3ecf154ce20d
 namespace: apps
 commonLabels:
   app: new-test-m-argo
