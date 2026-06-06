@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: new-test-m-argo
+  labels:
+    app: new-test-m-argo
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: new-test-m-argo
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 30s
